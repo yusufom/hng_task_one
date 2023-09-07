@@ -19,5 +19,5 @@ from base.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', BookView.as_view()),
+    path('api/', TaskView.as_view()),
 ]

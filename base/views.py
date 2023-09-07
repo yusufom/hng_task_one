@@ -12,13 +12,13 @@ class CustomRenderer(renderers.JSONRenderer):
         response_data = data
         return super().render(response_data, accepted_media_type, renderer_context)
 
-class BookView(APIView):
+class TaskView(APIView):
     renderer_classes = [CustomRenderer]
 
     def get(self, request):
         slack_name = request.GET.get('slack_name')
         track = request.GET.get('track')
-        books = {
+        res = {
             "slack_name": slack_name,
             "current_day": datetime.now().strftime('%A'),
             "utc_time": datetime.now(),
@@ -27,4 +27,4 @@ class BookView(APIView):
             "github_repo_url": "https://github.com/yusufom/hng_task_one/",
             "status_code": status.HTTP_200_OK
             }
-        return Response(books, status=status.HTTP_200_OK)
+        return Response(res, status=status.HTTP_200_OK)

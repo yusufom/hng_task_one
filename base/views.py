@@ -24,8 +24,8 @@ class BookView(APIView):
             "current_day": datetime.now().strftime('%A'),
             "utc_time": datetime.now(),
             "track": track,
-            "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext",
-            "github_repo_url": "https://github.com/username/repo",
+            "github_file_url": "https://github.com/yusufom/hng_task_one/blob/main/base/views.py",
+            "github_repo_url": "https://github.com/yusufom/hng_task_one/",
             "status_code": status.HTTP_200_OK
             }
         return Response(books, status=status.HTTP_200_OK)

@@ -18,7 +18,6 @@ class BookView(APIView):
     def get(self, request):
         slack_name = request.GET.get('slack_name')
         track = request.GET.get('track')
-        print(datetime.today())
         books = {
             "slack_name": slack_name,
             "current_day": datetime.now().strftime('%A'),
